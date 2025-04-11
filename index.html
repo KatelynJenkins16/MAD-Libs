@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MadLib Practice</title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <h1>Daily Life</h1> 
+
+    <form>
+        <label for="firstName">First Name</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+        
+        <label for="adjective">Enter a Adjective</label><br>
+        <input type="text" id="adjective" name="adjective"><br><br>
+        
+        <label for="exclamation">Enter an Exclamation</label><br>
+        <input type="text" id="exclamation" name="exclamation"><br><br>
+        
+        <label for="noun">Enter a plural noun</label><br>
+        <input type="text" id="noun" name="noun"><br><br>
+        
+        <label for="verb">Select a verb</label><br>
+        <select id="verb" name="verb">
+            <option value="choose">Choose One...</option>
+            <option value="run">run</option>
+            <option value="jump">jump</option>
+            <option value="walk">walk</option>
+            <option value="talk">talk</option>
+            <option value="play">play</option>
+            <option value="scream">scream</option>
+        </select><br><br>
+        
+        <label for="friend">Select a person</label><br>
+        <select id="friend" name="friend">
+            <option value="choose">Choose One...</option>
+            <option value="britney">Britney</option>
+            <option value="john">John</option>
+            <option value="liam">Liam</option>
+            <option value="rachel">Rachel</option>
+            <option value="hannah">Hannah</option>
+            <option value="bob">Bob</option>
+        </select><br><br>
+        
+        <label for="place">Select a place</label><br>
+        <select id="place" name="place">
+            <option value="choose">Choose One...</option>
+            <option value="dock">dock</option>
+            <option value="lab">lab</option>
+            <option value="fair">fair</option>
+            <option value="school">school</option>
+            <option value="bedroom">bedroom</option>
+            <option value="concert">concert</option>
+        </select><br><br>
+        
+        <label for = "object">Pick is your favorite object?</label><br>
+        <input type = "radio"  id = "hammer" name = "object" value = "hammer">
+        <label for = "hammer">hammer</label><br>
+        <input type = "radio"  id = "jacket" name = "object" value = "jacket">
+        <label for = "jacket">jacket</label><br>
+        <input type = "radio"  id = "phone" name = "object" value = "phone">
+        <label for = "phone">phone</label><br>
+        <input type = "radio"  id = "banana" name = "object" value = "banana">
+        <label for = "banana">banana</label><br>
+        <input type = "radio"  id = "nail" name = "object" value = "nail">
+        <label for = "nail">nail</label><br><br> 
+        
+        <input type="button" value="Create Story" onClick=madLib()>
+        
+    </form>
+    <hr>
+    <h1>My Ridiculous Adventure</h1>
+    <h1>.....</h1><br><br>
+    
+    <h3 id="madLibHere"></h3>
+    <script>
+        function madLib(){
+            var name=document.getElementById("firstName").value;
+            var adjective=document.getElementById("adjective").value;
+            var noun=document.getElementById("noun").value;
+            var verb=document.getElementById("verb").value;
+            var exclamation=document.getElementById("exclamation").value;
+            var friend=document.getElementById("friend").value;
+            var place=document.getElementById("place").value;
+            var object = getSelectedObject();
+        
+        function getSelectedObject() {
+    // Select all radio buttons with the name 'object'
+    var radioButtons = document.getElementsByName('object');
+    
+    // Loop through the radio buttons to find the selected one
+    for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+            return radioButtons[i].value; // Return the value of the selected button
+        }
+    }
+}
+
+
+            document.getElementById("madLibHere").innerHTML="Today, " + name +" decided to visit the " + place +
+            ", even though " + friend + " told me it was full of " + noun + ". I packed my favorite "
+            + adjective + " " + object + ", put on my lucky socks, and yelled "+ exclamation + " before heading out the door." +
+            " That was the last day " + name + " was seen alive. " + name + " tried to" + verb + " but " + friend + 
+            " caught up and killed them with a " + object
+            
+        }
+        
+       
+        
+        
+    </script>
+    
+    
+    
+    
+</body>
+</html>
